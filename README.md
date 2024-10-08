@@ -33,6 +33,8 @@ Also, `Client/Content/Aki/Sequence` (as properties `json`) can be used to match 
 
 Get [wwiser](https://github.com/bnnm/wwiser). Select `WwiseAudio_Generated` and generate `.txtp`.
 
+If the `.txtp` filename contains `(3313202977=2204441813)`, it contains Girl (as main character) voice. Otherwise, it contains Boy voice.
+
 ### Match videos with audios
 
 Check the DB by yourself or [use public data](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videodata.json).
@@ -80,7 +82,7 @@ Find `play_sequence_music_m0206.txtp`(`../Media/633609165.wem #i #b 115.65439583
 
 Get [vgmstream-cli](https://github.com/vgmstream/vgmstream).
 
-Run the command:
+In `txtp` folder, run the command:
 
 ```shell
 vgmstream-cli <TXTP Filename>.txtp -o <Output Filename>.wav
