@@ -12,6 +12,8 @@ CgName = "C0002"  # The CgName of the subtitle you want to export.
 
 ##### (Basically) Static #####
 CgFPS = 30  # The FPS of the video you want to export, usually 30 for WuWa.
+ShowMomentKey = "ShowMoment"  # ShowMomentEn etc. also available in some videos.
+DurationKey = "Duration"
 
 
 def load_json(filename):
@@ -77,10 +79,10 @@ for caption in DestCaption:
         pysrt.SubRipItem(
             index=count,
             start=pysrt.SubRipTime(
-                milliseconds=frame_to_ms(caption["ShowMoment"]),
+                milliseconds=frame_to_ms(caption[ShowMomentKey]),
             ),
             end=pysrt.SubRipTime(
-                milliseconds=frame_to_ms(caption["ShowMoment"] + caption["Duration"]),
+                milliseconds=frame_to_ms(caption[ShowMomentKey] + caption[DurationKey]),
             ),
             text=caption["CaptionText"],
         )
