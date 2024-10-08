@@ -29,7 +29,7 @@ Or, easier, just check the publicly available [unpacked data](https://github.com
 
 Also, `Client/Content/Aki/Sequence` (as properties `json`) can be used to match `CgFile` with real file path. Also, you can guess by filename.
 
-### Parse Wwise .bnk
+### Parse Wwise `.bnk`
 
 Get [wwiser](https://github.com/bnnm/wwiser). Select `WwiseAudio_Generated` and generate `.txtp`.
 
@@ -41,7 +41,13 @@ Check the DB by yourself or [use public data](https://github.com/Arikatsu/Wuther
 
 Match `CgName`-[`CgFile`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videodata.json)-[`EventPath`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videosound.json).
 
-For captions, `CgName`-[`ShowMoment`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videocaption.json)-[`CaptionText`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/Textmaps/zh-Hans/multi_text/MultiText.json). Skip for now.
+### Generate captions
+
+For captions, `CgName`-[`ShowMoment`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videocaption.json)-[`CaptionText`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/Textmaps/zh-Hans/multi_text/MultiText.json).
+
+Check `WuWaCaptionsGen` for automatic generation.
+
+### Let's try it out
 
 For example, we want to export `M0206_Nvzhu`.
 
