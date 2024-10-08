@@ -4,15 +4,18 @@
 # Just match anything in `Movies` with `WwiseAudio_Generated\txtp`
 # The implication is very dirty.
 # This is not recommended for production.
+# FIXME: Not working yet.
 import os
-import subprocess
 import shutil
+import subprocess
 
 import ffmpeg
 
 ##### Change these #####
 MoviesDir = r"C:\PathTo\FModel\Output\Exports\Client\Content\Aki\Movies"
-WwiseAudio_GeneratedDir = r"C:\PathTo\FModel\Output\Exports\Client\Content\Aki\WwiseAudio_Generated"
+WwiseAudio_GeneratedDir = (
+    r"C:\PathTo\FModel\Output\Exports\Client\Content\Aki\WwiseAudio_Generated"
+)
 Girl = True  # True will only extract Girl videos, False will only extract Boy videos. Reduces complexity.
 ########################
 
@@ -86,7 +89,7 @@ def merge_wavs(wavs):
     streams = []
     for wav in wavs:
         streams.append(ffmpeg.input(wav))
-    ffmpeg.filter(streams, "amerge", inputs=len(wavs)).output(outfile, ac=2).run(
+    ffmpeg.filter(streams, "amerge", inputs=len(wavs)).output(outfile).run(
         quiet=True, overwrite_output=True
     )
     # FIXME: Might shorten audio by the shortest one, not expected
@@ -123,6 +126,9 @@ def merge_video_audio(video, audio):
             "copy",
             "-c:a",
             "aac",
+            "-ac",
+            "6",  # 6 channels. Should be enough.
+            # FIXME: Input channel layout '13 channels (FL+FR+FC+LFE+BL+BR+FLC+FRC+BC+SL+SR+TC+TFL)' is not supported
             outfile,
             "-y",
             "-loglevel",
