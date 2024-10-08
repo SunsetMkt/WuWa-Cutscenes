@@ -27,7 +27,7 @@ You may also need `Client/Content/Aki/ConfigDB` to know which audio is needed fo
 
 Or, easier, just check the publicly available [unpacked data](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videosound.json).
 
-Also, `Client/Content/Aki/Sequence` (as properties `json`) can be used to match `CgFile` with real file path. Also, you can guess by filename.
+Also, `Client/Content/Aki/Sequence` (as properties `json`) can be used to match `CgFile` with real file path. Besides, you can guess by filename.
 
 ### Parse Wwise `.bnk`
 
