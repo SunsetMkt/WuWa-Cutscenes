@@ -33,7 +33,7 @@ Also, `Client/Content/Aki/Sequence` (as properties `json`) can be used to match 
 
 Get [wwiser](https://github.com/bnnm/wwiser). Select `WwiseAudio_Generated` and generate `.txtp`.
 
-If the `.txtp` filename contains `(3313202977=2204441813)`, it contains Girl (as main character) voice. Otherwise, it contains Boy voice.
+If the `.txtp` filename contains `(3313202977=2204441813)`, it contains Girl (as main character) voice. Otherwise, if it contains `(3313202977=3111576190)`, it contains Boy voice.
 
 ### Match videos with audios
 
