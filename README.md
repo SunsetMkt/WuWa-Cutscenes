@@ -2,13 +2,13 @@
 
 A method to export Wuthering Waves cutscenes/movies.
 
-**Currently, there's only manual exports available. But it's not hard to automate. PRs are welcome.**
+**~~Currently, there's only manual exports available.~~ But it's not hard to automate. PRs are welcome.**
 
 ## Steps
 
 ### Install the game
 
-[Epic Games Store](https://store.epicgames.com/en-US/p/wuthering-waves-76ebc5)
+[Epic Games Store](https://store.epicgames.com/en-US/p/wuthering-waves-76ebc5) or from WuWa's official website.
 
 Download and run the launcher. Download the full game and **run it for fully download**.
 
