@@ -70,7 +70,7 @@ def get_audios_by_name(name):
         for Cg in CgsData:
             if name.split("_")[0].lower() in Cg["CgFile"].lower():
                 for EventPath in Cg["EventPath"]:
-                    if EventPath in file:
+                    if EventPath.lower() in file.lower():
                         TxtpList.append(file)
 
     # Remove duplicates
