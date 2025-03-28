@@ -1,5 +1,8 @@
 # WuWa-Cutscenes
 
+> [!WARNING]  
+> Movies (*.mp4) in 2.1 and after are encrypted. Help needed to reverse engineer the decryption solution. See issues.
+
 A method to export Wuthering Waves cutscenes/movies.
 
 **~~Currently, there's only manual exports available.~~ But it's not hard to automate. PRs are welcome.**
