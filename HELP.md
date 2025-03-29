@@ -935,4 +935,4 @@ Seem to be the Unreal C++ part of the game. However, I have no experience in ana
 
 ## Any `Decrypt` keyword in JavaScript or dumped SDK classes/functions?
 
-Yes, but only in update manager and pak file handling. So no useful information.
+Yes, but only in hotfix management and `pak` keys handling. So no useful information.
