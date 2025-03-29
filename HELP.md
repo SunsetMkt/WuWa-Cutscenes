@@ -929,9 +929,9 @@ class ResourceSystem {
 
 </details>
 
-## `UE.KuroResourceManager`
+## `UE.KuroResourceManager` and `UE.MediaSource`
 
-Seems to be the Unreal C++ part of the game. However, I have no experience in analyzing Unreal C++. Help needed.
+Seem to be the Unreal C++ part of the game. However, I have no experience in analyzing Unreal C++. Help needed.
 
 ## Any Decrypt keyword in JavaScript?
 
