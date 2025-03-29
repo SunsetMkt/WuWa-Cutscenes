@@ -1,9 +1,9 @@
 # What we know about WuWa's Media Player
 
 > [!WARNING]  
-> Movies (\*.mp4) in 2.1 and after are encrypted. Help needed to reverse engineer the decryption solution. See issues.
-
-> The logging information in the following JavaScript is in Chinese. Use Google Translate would be helpful.
+> Movies (\*.mp4) in 2.1 and after are encrypted. Help needed to reverse engineer the decryption solution.
+>
+> The logging information in the following JavaScript is in Chinese. Google Translate would be helpful.
 
 ## File extraction?
 
@@ -933,6 +933,6 @@ class ResourceSystem {
 
 Seem to be the Unreal C++ part of the game. However, I have no experience in analyzing Unreal C++. Help needed.
 
-## Any Decrypt keyword in JavaScript?
+## Any `Decrypt` keyword in JavaScript or dumped SDK classes/functions?
 
 Yes, but only in update manager and pak file handling. So no useful information.
