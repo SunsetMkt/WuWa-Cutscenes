@@ -5,6 +5,10 @@
 
 > The logging information in the following JavaScript is in Chinese. Use Google Translate would be helpful.
 
+## File extraction?
+
+It's believed that the extracted mp4 files are as-is. Not corrupted by extractors.
+
 ## `Game\Module\Common\MediaPlayer.js`
 
 In-game JavaScript is used as a wrapper for the media player.
