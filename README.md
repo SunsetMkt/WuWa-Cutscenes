@@ -1,9 +1,7 @@
 # WuWa-Cutscenes
 
 > [!WARNING]  
-> Movies (\*.mp4) in 2.1 and after are encrypted. Help needed to reverse engineer the decryption solution. See issues.
->
-> [What we know about WuWa's Media Player](HELP.md)
+> Movies (\*.mp4) in 2.1 and after are encrypted. Use the latest version of [4sval/FModel](https://github.com/4sval/FModel) to export videos.
 
 A method to export Wuthering Waves cutscenes/movies.
 
