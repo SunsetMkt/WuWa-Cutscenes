@@ -23,11 +23,23 @@ You may export ConfigDB from the game, or download the data from GitHub.
 Export the following folders (as raw files):
 
 - `Client/Content/Aki/Movies`
-- `Client/Content/Aki/WwiseAudio`
 - `Client/Content/Aki/WwiseAudio_Generated`
+
+<!--
+Export the following folders (as properties `json`):
+
+- `Client/Content/Aki/Sequence/LevelA_Seq`
+- `Client/Content/Aki/Sequence/LevelB_Seq`
+
+Too big. And the filenames are already in `videodata.json`, though may not the exact name.
+-->
 
 ## Parse Wwise `.bnk`
 
 [wwiser](https://github.com/bnnm/wwiser)
 
 Select `WwiseAudio_Generated` and generate `.txtp`.
+
+## Generate `videos_info.json`
+
+Run `gen_videos_info.py`.
