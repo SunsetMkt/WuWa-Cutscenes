@@ -24,7 +24,7 @@ videos_info = []
 
 video_template = {
     "CgName": "",
-    "GirlOrBoy": 0,
+    "GirlOrBoy": "Girl",
     "CgFile": "",
     "Sound": [],
 }
@@ -132,7 +132,7 @@ def get_events_by_CgName(CgName):
     events = []
     fixup_map = {
         # These names are fixed manually since the matching does not always work
-        "play_story_music_3_0_b_m3_1_11_c": "play_story_music_3_0_b_m3_1_11 (4135626798=C)"
+        "play_story_music_3_0_b_m3_1_11_c": "play_story_music_3_0_b_m3_1_11 (4135626798=84696444)"
     }
 
     for i in items:

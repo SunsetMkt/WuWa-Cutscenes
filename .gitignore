@@ -3,6 +3,15 @@
 
 # srt
 *.srt
+Captions/
+
+# Videos
+Videos/
+*.mp4
+
+# Sounds
+Sounds/
+*.wav 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

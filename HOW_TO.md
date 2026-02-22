@@ -2,6 +2,17 @@
 
 Read README.md first.
 
+## Requirements
+
+```pwsh
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+scoop install main/vgmstream
+scoop install main/ffmpeg
+scoop bucket add games
+scoop install games/fmodel
+```
+
 ## Download unpacked data
 
 You may export ConfigDB from the game, or download the data from GitHub.
@@ -43,3 +54,7 @@ Select `WwiseAudio_Generated` and generate `.txtp`.
 ## Generate `videos_info.json`
 
 Run `gen_videos_info.py`.
+
+## Generate final videos
+
+Run `gen_final_videos_by_info.py`.
