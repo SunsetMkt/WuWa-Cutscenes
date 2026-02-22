@@ -44,13 +44,9 @@ Check the DB by yourself or [use public data](https://github.com/Arikatsu/Wuther
 
 Match `CgName`-[`CgFile`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videodata.json)-[`EventPath`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videosound.json).
 
-Check `WuWaCutscenesInfoGen_Video` for automatic generation.
-
 ### Generate captions
 
 For captions, `CgName`-[`ShowMoment`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videocaption.json)-[`CaptionText`](https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/Textmaps/zh-Hans/multi_text/MultiText.json).
-
-Check `WuWaCaptionsGen` for automatic generation.
 
 ### Let's try it out
 

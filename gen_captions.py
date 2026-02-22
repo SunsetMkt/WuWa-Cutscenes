@@ -1,7 +1,3 @@
-# Download the following files:
-# https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/BinData/cgVedio/videocaption.json
-# https://github.com/Arikatsu/WutheringWaves_Data/blob/1.3/Textmaps/zh-Hans/multi_text/MultiText.json
-# Place them in the same folder as this script.
 import json
 import os
 
@@ -29,7 +25,8 @@ def save_json(filename, data):
 
 def save_srt(filename, srt):
     script_path = os.path.dirname(os.path.realpath(__file__))
-    filename = os.path.join(script_path, filename)
+    filename = os.path.join(script_path, "Captions", filename)
+    os.makedirs(os.path.dirname(filename), exist_ok=True)
     srt.save(filename)
 
 

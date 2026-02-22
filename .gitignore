@@ -1,3 +1,9 @@
+# Unpacked data
+*.json
+
+# srt
+*.srt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
