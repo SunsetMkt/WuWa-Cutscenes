@@ -147,6 +147,7 @@ def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
 
     # Girl: 0, Boy: 1
     param_map = {0: "(3313202977=2204441813)", 1: "(3313202977=3111576190)"}
+    # TODO: Girl may also has "(3313202977=748895195)"
 
     for event in events:
         # Search for all txtp with the event name
@@ -167,6 +168,14 @@ def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
             if param_map[GirlOrBoy] in txtp:
                 files.append(get_abs_path(txtp))
                 break
+        
+        # If more than one result and no girl or boy parameter (nothing in files),
+        # use all except the player not match the parameter
+        if len(files) == 0:
+            for txtp in txtp_list:
+                if param_map[int(not GirlOrBoy)] in txtp:
+                    continue
+                files.append(get_abs_path(txtp))
 
     return files
 
