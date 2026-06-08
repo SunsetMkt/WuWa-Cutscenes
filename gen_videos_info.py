@@ -19,7 +19,7 @@ from functools import lru_cache
 ###### Change these paths ######
 Movies_path = r"E:\FModel\Exports\Client\Content\Aki\Movies"
 WwiseAudio_Generated_txtp_path = (
-    r"E:\FModel\Exports\Client\Content\Aki\WwiseAudio_Generated/txtp"
+    r"E:\FModel\Exports\Client\Content\Aki\WwiseAudio_Generated\txtp"
 )
 
 videos_info = []
@@ -29,6 +29,8 @@ video_template = {
     "GirlOrBoy": "Girl",
     "CgFile": "",
     "Sound": [],
+    "PossibleSound": [],
+    "Event": [],
 }
 
 
@@ -123,7 +125,7 @@ def get_path_by_CgFile(CgFile):
     fn = get_filename_by_CgFile(CgFile)
     fp = search_file(Movies_path, fn)
     if not fp:
-        print(f"Warning: {CgFile} not found in {Movies_path}")
+        print(f"WRN(Vid): {CgFile} not found")
         return None
     fp = get_abs_path(fp)
     return fp
@@ -146,52 +148,60 @@ def get_events_by_CgName(CgName):
 def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
     events = get_events_by_CgName(CgName)
     files = []
+    all_files = []
 
     # Girl: 0, Boy: 1
     param_map = {0: "(3313202977=2204441813)", 1: "(3313202977=3111576190)"}
     # TODO: Girl may also has "(3313202977=748895195)"
 
     for event in events:
+        this_event_files = []
         # Search for all txtp with the event name
         txtp_list = search_all_files(WwiseAudio_Generated_txtp_path, event)
+        all_files.extend(txtp_list)
 
         # If no result, continue
         if not txtp_list:
-            print(f"Warning: {event} not found in {WwiseAudio_Generated_txtp_path}")
+            print(f"WRN(Snd): {event} not found")
             continue
 
         # If one result, use it
         if len(txtp_list) == 1:
-            files.append(get_abs_path(txtp_list[0]))
+            this_event_files.append(get_abs_path(txtp_list[0]))
+            files.extend(this_event_files)
             continue
 
-        # If more than one result, use the one with the parameter
-        for txtp in txtp_list:
-            if param_map[GirlOrBoy] in txtp:
-                files.append(get_abs_path(txtp))
-                break
+        # If only two results, it's possible they're just Girl or Boy,
+        # try to use the one with the player type parameter
+        if len(txtp_list) == 2:
+            for txtp in txtp_list:
+                if param_map[GirlOrBoy] in txtp:
+                    this_event_files.append(get_abs_path(txtp))
+                    files.extend(this_event_files)
+                    break
 
-        # If more than one result and no girl or boy parameter (nothing in files),
-        # use all except the player not match the parameter
-        if len(files) == 0:
+        # If more than one result and no girl or boy parameter (results in nothing in files),
+        # use all except the player type not match the parameter
+        if len(this_event_files) == 0:
             for txtp in txtp_list:
                 if param_map[int(not GirlOrBoy)] in txtp:
                     continue
-                files.append(get_abs_path(txtp))
+                this_event_files.append(get_abs_path(txtp))
+                files.extend(this_event_files)
 
-    return files
+    return files, all_files, events
 
 
 if __name__ == "__main__":
     videodata = load_json("videodata.json")
     videosound = load_json("videosound.json")
 
-    print("Generating videos_info.json")
+    print("INF: Generating videos_info.json")
 
     for item in videodata:
         video = copy.deepcopy(video_template)
 
-        # print(f"Parsing {item["CgName"]}")
+        # print(f"DBG: Parsing {item["CgName"]}")
         video["CgName"] = item["CgName"]
 
         char_map = {0: "Girl", 1: "Boy"}
@@ -199,7 +209,9 @@ if __name__ == "__main__":
 
         video["CgFile"] = get_path_by_CgFile(item["CgFile"])
 
-        video["Sound"] = get_all_sounds_by_CgName(item["CgName"], item["GirlOrBoy"])
+        video["Sound"], video["PossibleSound"], video["Event"] = (
+            get_all_sounds_by_CgName(item["CgName"], item["GirlOrBoy"])
+        )
 
         videos_info.append(video)
 
@@ -208,4 +220,11 @@ if __name__ == "__main__":
 
     save_json("videos_info.json", videos_info)
 
-    print("Done")
+    # For each video, in most cases, len(Event) should == len(Sound)
+    for item in videos_info:
+        if len(item["Event"]) != len(item["Sound"]):
+            print(
+                f"WRN(Snd): {item['CgName']} {item['GirlOrBoy']} has {len(item['Event'])} events but {len(item['Sound'])} sounds"
+            )
+
+    print("INF: Done")
