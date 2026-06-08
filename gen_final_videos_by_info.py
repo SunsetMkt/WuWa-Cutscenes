@@ -5,9 +5,7 @@ import subprocess
 
 from ffmpegio import ffmpeg
 
-###### Change these paths ######
-Movies_path = "../Movies"
-WwiseAudio_Generated_txtp_path = "../WwiseAudio_Generated/txtp"
+###### Change this ######
 GirlOnly = True  # Only generate Girl version
 
 
