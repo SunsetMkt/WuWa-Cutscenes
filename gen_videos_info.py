@@ -14,6 +14,7 @@ These info are necessary to generate videos in last step.
 import copy
 import json
 import os
+import re
 from functools import lru_cache
 
 ###### Change these paths ######
@@ -194,9 +195,9 @@ def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
                     files.extend(this_event_files)
                     break
 
-        # If more than one result and no girl or boy parameter (results in nothing in files),
+        # If more than two result or no girl or boy parameter (results in nothing in files),
         # use all except the player type not match the parameter
-        if len(this_event_files) == 0:
+        if len(this_event_files) == 0 or len(txtp_list) > 2:
             for txtp in txtp_list:
                 if param_map[int(not GirlOrBoy)] in txtp:
                     continue
@@ -209,11 +210,17 @@ def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
 
     # Locale drops:
     # Drop any item with (2441027675=*) but not equal to Locale_wanted
-    files = [
-        i
-        for i in files
-        if "(2441027675=" not in i or f"(2441027675={Locale_wanted})" in i
-    ]
+    locale_filtered_files = []
+    for i in files:
+        # Only handle (2441027675=zh) two letter names
+        match = re.search(r"\(2441027675=([a-zA-Z]{2})\)", i)
+        if match:
+            if match.group(1) == Locale_wanted:
+                locale_filtered_files.append(i)
+        else:
+            locale_filtered_files.append(i)
+
+    files = locale_filtered_files
 
     # Actively drops keywords except wanted
     # This mainly fixes "play_all_sound_m0355_loading should not in M0355"
