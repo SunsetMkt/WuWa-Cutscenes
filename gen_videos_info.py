@@ -21,6 +21,7 @@ Movies_path = r"E:\FModel\Exports\Client\Content\Aki\Movies"
 WwiseAudio_Generated_txtp_path = (
     r"E:\FModel\Exports\Client\Content\Aki\WwiseAudio_Generated\txtp"
 )
+Locale_wanted = "zh"
 
 videos_info = []
 
@@ -188,6 +189,18 @@ def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
                     continue
                 this_event_files.append(get_abs_path(txtp))
                 files.extend(this_event_files)
+
+    files = list(dict.fromkeys(files))
+    all_files = list(dict.fromkeys(all_files))
+    events = list(dict.fromkeys(events))
+
+    # Locale drops:
+    # Drop any item with (2441027675=*) but not equal to Locale_wanted
+    files = [
+        i
+        for i in files
+        if "(2441027675=" not in i or f"(2441027675={Locale_wanted})" in i
+    ]
 
     return files, all_files, events
 
