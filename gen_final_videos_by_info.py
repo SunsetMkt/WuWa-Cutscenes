@@ -136,7 +136,7 @@ if __name__ == "__main__":
             for a in audio_files:
                 cmd += ["-i", a]
 
-            amix_inputs = "".join(f"[{i+1}:a]" for i in range(audio_count))
+            amix_inputs = "".join(f"[{i + 1}:a]" for i in range(audio_count))
             filter_complex = (
                 f"{amix_inputs}"
                 f"amix=inputs={audio_count}:duration=longest,"

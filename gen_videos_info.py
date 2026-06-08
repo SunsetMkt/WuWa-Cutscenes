@@ -17,8 +17,10 @@ import os
 from functools import lru_cache
 
 ###### Change these paths ######
-Movies_path = "../Movies"
-WwiseAudio_Generated_txtp_path = "../WwiseAudio_Generated/txtp"
+Movies_path = r"E:\FModel\Exports\Client\Content\Aki\Movies"
+WwiseAudio_Generated_txtp_path = (
+    r"E:\FModel\Exports\Client\Content\Aki\WwiseAudio_Generated/txtp"
+)
 
 videos_info = []
 
@@ -168,7 +170,7 @@ def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
             if param_map[GirlOrBoy] in txtp:
                 files.append(get_abs_path(txtp))
                 break
-        
+
         # If more than one result and no girl or boy parameter (nothing in files),
         # use all except the player not match the parameter
         if len(files) == 0:
