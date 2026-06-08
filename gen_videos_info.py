@@ -139,10 +139,21 @@ def get_events_by_CgName(CgName):
         # These names are fixed manually since the matching does not always work
         "play_story_music_3_0_b_m3_1_11_c": "play_story_music_3_0_b_m3_1_11 (4135626798=84696444)"
     }
+    CgName_append_map = {
+        # These CgNames have no configured audio, but should have
+        # Mainly fixes Vernal Days Dreamed by the Star
+        "M3_2_38": ["play_story_music_m3_2_38"]
+    }
 
     for i in items:
         event = i["EventPath"].split("/")[-1].split(".")[0]
         events.append(fixup_map.get(event, event))
+
+    if CgName in CgName_append_map:
+        events.extend(CgName_append_map[CgName])
+
+    events = list(dict.fromkeys(events))
+
     return events
 
 
