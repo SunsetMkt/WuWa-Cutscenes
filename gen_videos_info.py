@@ -202,6 +202,14 @@ def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
         if "(2441027675=" not in i or f"(2441027675={Locale_wanted})" in i
     ]
 
+    # Actively drops keywords except wanted
+    # This mainly fixes "play_all_sound_m0355_loading should not in M0355"
+    active_drop_words = ["_loading"]
+    for word in active_drop_words:
+        if not any(word in event for event in events):
+            # If word not in any event, drop all files with the word
+            files = [i for i in files if word not in i]
+
     return files, all_files, events
 
 
