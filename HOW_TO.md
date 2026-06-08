@@ -19,17 +19,17 @@ You may export ConfigDB from the game, or download the data from GitHub.
 
 ### For videos generation
 
-- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.1/BinData/cgVedio/videodata.json>
-- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.1/BinData/cgVedio/videosound.json>
+- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.4/BinData/cgVedio/videodata.json>
+- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.4/BinData/cgVedio/videosound.json>
 
 ### For captions generation
 
-- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.1/Textmaps/zh-Hans/multi_text/MultiText.json>
-- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.1/BinData/cgVedio/videocaption.json>
+- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.4/Textmaps/zh-Hans/multi_text/MultiText.json>
+- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.4/BinData/cgVedio/videocaption.json>
 
 ## Unpack the media resources
 
-[FModel](https://github.com/4sval/FModel) [wuwa-aes-archive](https://github.com/ClostroOffi/wuwa-aes-archive)
+[FModel](https://github.com/4sval/FModel) [wuwa-keys](https://github.com/yarik0chka/wuwa-keys)
 
 Export the following folders (as raw files):
 
@@ -49,7 +49,7 @@ Too big. And the filenames are already in `videodata.json`, though may not the e
 
 [wwiser](https://github.com/bnnm/wwiser)
 
-Select `WwiseAudio_Generated` and generate `.txtp`.
+Select `WwiseAudio_Generated`, voice language (if has options other than `en`) and generate `.txtp`.
 
 ## Generate `videos_info.json`
 
