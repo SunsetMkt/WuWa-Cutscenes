@@ -210,6 +210,15 @@ def get_all_sounds_by_CgName(CgName, GirlOrBoy=0):
             # If word not in any event, drop all files with the word
             files = [i for i in files if word not in i]
 
+    # Drop keywords for specified CgName
+    # This mainly fixes I Really Want to Stay at Your House in M0362
+    CgName_drop_map = {
+        "M0362": ["(146205860=84696445) {m}", "(146205860=84696446) {m}"]
+    }
+    if CgName in CgName_drop_map:
+        drop_words = CgName_drop_map[CgName]
+        files = [i for i in files if not any(word in i for word in drop_words)]
+
     return files, all_files, events
 
 
