@@ -140,9 +140,11 @@ def get_events_by_CgName(CgName):
         "play_story_music_3_0_b_m3_1_11_c": "play_story_music_3_0_b_m3_1_11 (4135626798=84696444)"
     }
     CgName_append_map = {
-        # These CgNames have no configured audio, but should have
-        # Mainly fixes Vernal Days Dreamed by the Star
-        "M3_2_38": ["play_story_music_m3_2_38"]
+        # These CgNames have no configured music, but should have
+        # Mainly fixes Vernal Days Dreamed by the Star, etc.
+        "M3_2_38": ["play_story_music_m3_2_38"],
+        "M3_0_28": ["play_story_music_3_0_a_m3_0_28"],
+        "M3_2_13": ["play_story_music_m3_2_13"],
     }
 
     for i in items:
