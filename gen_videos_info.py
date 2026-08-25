@@ -148,6 +148,7 @@ def get_events_by_CgName(CgName):
         "M3_2_13": ["play_story_music_m3_2_13"],
         "M3_10_16_1": ["play_sfx_lvb_m3_10_16_1"],
         "M0374": ["play_all_sound_m0374"],
+        "M0384": ["play_all_sound_m0384"],
     }
 
     for i in items:
