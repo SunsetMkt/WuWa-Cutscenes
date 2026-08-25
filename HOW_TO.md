@@ -19,13 +19,13 @@ You may export ConfigDB from the game, or download the data from GitHub.
 
 ### For videos generation
 
-- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.5/BinData/cgVedio/videodata.json>
-- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.5/BinData/cgVedio/videosound.json>
+- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.6/BinData/cgVedio/videodata.json>
+- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.6/BinData/cgVedio/videosound.json>
 
 ### For captions generation
 
-- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.5/Textmaps/zh-Hans/multi_text/MultiText.json>
-- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.5/BinData/cgVedio/videocaption.json>
+- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.6/Textmaps/zh-Hans/multi_text/MultiText.json>
+- <https://github.com/Arikatsu/WutheringWaves_Data/blob/3.6/BinData/cgVedio/videocaption.json>
 
 ## Unpack the media resources
 
